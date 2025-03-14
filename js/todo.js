@@ -34,7 +34,7 @@ function paintToDo(newTodo) {
 }
 
 function handleToDoSubmit(event) {
-  event.preventDefault();
+  // event.preventDefault();
   const newToDo = toDoInput.value;
   toDoInput.value = "";
   const newTodoObj = {
@@ -51,7 +51,7 @@ toDoForm.addEventListener("submit", handleToDoSubmit);
 const savedToDos = localStorage.getItem(TODOS_KEY);
 const parsedToDos = JSON.parse(savedToDos);
 
-if (Object.keys(parsedToDos).length > 0) {
+if (Object.keys(parsedToDos).length > 0 && parsedToDos !== null) {
   toDoList.classList.remove(HIDDEN_KEYWORD);
   toDos = parsedToDos;
   parsedToDos.forEach(paintToDo);

@@ -3,7 +3,6 @@ const greeting = document.querySelector("#greeting");
 const USERNAME_KEY = "username";
 
 function paintGreeting(username) {
-  console.log("!@!@@@@" + username);
   greeting.innerText = `Hello ${username}!`;
 }
 
