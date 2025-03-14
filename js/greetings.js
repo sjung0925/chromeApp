@@ -1,31 +1,19 @@
-const loginFrom = document.getElementById("login-form");
-const loginInput = loginFrom.querySelector("input");
 const greeting = document.querySelector("#greeting");
 
-const HIDDEN_CLASSNAME = "hidden";
 const USERNAME_KEY = "username";
 
-function onLoginSubmit(e) {
-    // e.preventDefault();
-    const username = loginInput.value;
-
-    localStorage.setItem(USERNAME_KEY, username)
-    loginFrom.classList.add(HIDDEN_CLASSNAME);
-    paintGreeting(username);
-}
-
 function paintGreeting(username) {
-    greeting.innerText = `HELLO ${username}!`;
-    greeting.classList.remove(HIDDEN_CLASSNAME);
+  console.log("!@!@@@@" + username);
+  greeting.innerText = `Hello ${username}!`;
 }
 
 const savedUsername = localStorage.getItem(USERNAME_KEY);
 
 if (savedUsername === null) {
-    loginFrom.classList.remove(HIDDEN_CLASSNAME);
-    loginFrom.addEventListener("submit", onLoginSubmit);
+  alert("이름을 입력해주세요!!!");
+  location.href = "index.html";
 } else {
-    paintGreeting(savedUsername)
+  paintGreeting(savedUsername);
 }
 /**
  * form 태그로 대체
